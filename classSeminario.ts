@@ -12,14 +12,16 @@ export class Seminario {
     }
 
     public addRequisito(pRequisito: string): boolean{
-       let consultaRquisitos: boolean = false;
+       let repedidoRequisitos: boolean = false;
        for( let i = 0; i < this.temasRequisitos.length; i++) {
         if(pRequisito.toUpperCase() === this.temasRequisitos[i].toUpperCase()){
-            consultaRquisitos = true;
+            repedidoRequisitos = true;
             return false;
         }
        }
        this.temasRequisitos.push(pRequisito);
-       return consultaRquisitos; 
+       repedidoRequisitos = true; 
+       console.log('requisitos no repetido');
+       return repedidoRequisitos;
     }
 }

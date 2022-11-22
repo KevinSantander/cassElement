@@ -12,15 +12,15 @@ export class TrabajoPractico {
   } 
 
   public addEjercicio(ejercicio: Ejercicio): boolean {
-    let repetido: boolean = false;
+    let nuevoEjercicio: boolean = false;
     for(let i = 0; i < this.ejercicios.length; i++) {
         if(this.ejercicios[i] === ejercicio) {
-            return repetido;
+            return nuevoEjercicio;
         }    
     }
     this.ejercicios.push(ejercicio);
-    repetido = true;
-    return repetido;
+    nuevoEjercicio = true;
+    return nuevoEjercicio;
   }
 
   public corregirTrabajoPractico(respuestas: string[]): number {
@@ -30,7 +30,7 @@ export class TrabajoPractico {
             nota++
         }
     }
-    return nota
+    return nota;
 
   }
 

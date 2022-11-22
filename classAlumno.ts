@@ -8,7 +8,7 @@ import { TrabajoPractico } from "./classTabajoPractico";
      public constructor(pNombre: string) {
         this.nombre = pNombre;
         this.trabajoPracticos = [];
-        this.respuestas = [];
+        this.respuestas = [[]];
      } 
 
      public realisarTabajoPractico(pTrabajoParactico: TrabajoPractico, pRespuestas: string[]): boolean {
@@ -23,7 +23,7 @@ import { TrabajoPractico } from "./classTabajoPractico";
                 this.respuestas[pocicionRespuestas].push(pRespuestas[i]);
             }
             console.log('se agregaro el trabajo y las respuestas');
-            console.log('la nota del trabajo es: ' + pTrabajoParactico.corregirTrabajoPractico(pRespuestas));
+            console.log('la nota del trabajo es: ' + pTrabajoParactico.corregirTrabajoPractico(pRespuestas) + 'de' + pRespuestas.length);
             return true;
         }
      }
@@ -32,7 +32,8 @@ import { TrabajoPractico } from "./classTabajoPractico";
         let trabajoRepetido: boolean = false;
         for (let i = 0; i < this.trabajoPracticos.length; i++) {
             if (this.trabajoPracticos[i] === pTrabajoParactico) {
-                trabajoRepetido = true; 
+                trabajoRepetido = true;
+                return trabajoRepetido; 
             }
         }
         return trabajoRepetido;
