@@ -18,7 +18,7 @@ export class TrabajoPracticoIntegrador extends TrabajoPractico {
         }
         this.ejercicios.push(ejercicio);
         repetido = true;
-        console.log("Lo solucionamos con consol.log");
+        console.log("Lo solucionamos con console.log");
         return repetido;
     }
 

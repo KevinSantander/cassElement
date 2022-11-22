@@ -8,7 +8,7 @@ export class TrabajoPractico {
   public constructor(paramTema: string, paramPuntaje: number) {
     this.tema = paramTema;
     this.puntajeDeAprobacion = paramPuntaje;
-    //this.ejercicios = [];
+    this.ejercicios = [];
   } 
 
   public addEjercicio(ejercicio: Ejercicio): boolean {

@@ -1,16 +1,25 @@
 import { Alumno } from "./classAlumno";
 
-class Seminario {
+export class Seminario {
     private tema: string;
-    private temaRequisitos: string[];
+    private temasRequisitos: string[];
     private alumnos: Alumno[];
 
-    public constructor(paramTema: string, paramTemaRequisitos: string[]) {
+    public constructor(paramTema: string,) {
         this.tema = paramTema;
-        this.temaRequisitos = paramTemaRequisitos;
+        this.temasRequisitos = [];
+        this.alumnos = [];
     }
 
     public addRequisito(pRequisito: string): boolean{
-        
+       let consultaRquisitos: boolean = false;
+       for( let i = 0; i < this.temasRequisitos.length; i++) {
+        if(pRequisito.toUpperCase() === this.temasRequisitos[i].toUpperCase()){
+            consultaRquisitos = true;
+            return false;
+        }
+       }
+       this.temasRequisitos.push(pRequisito);
+       return consultaRquisitos; 
     }
 }
